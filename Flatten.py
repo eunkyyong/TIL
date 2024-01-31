@@ -24,7 +24,6 @@ def dump(height):
         # 입력값을 확인하자. 의도한 대로 돌아가고 있는 지.
         MaxP = myMax()
         MinP = myMin()
-
         # 위에서 Max-1하면 이거 반영된 채로 Min구하므로 안됨
         # loop 끝나고 평탄화.
         height[MaxP] -= 1
