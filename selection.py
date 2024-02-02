@@ -25,5 +25,5 @@ def selectionS(numbers):
 numbers = [64, 25, 10, 22, 11]
 selectionS(numbers)
 print(selectionS([64, 25, 10, 22, 11, -2]))
-print(selectionS([64, 25, 10, 22, 11, -2]))
-print(selectionS([64, 25, 10, 22, 11, -2]))
+# print(selectionS([64, 25, 10, 22, 11, -2]))
+# print(selectionS([64, 25, 10, 22, 11, -2]))
