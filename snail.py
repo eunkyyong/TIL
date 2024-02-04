@@ -6,7 +6,7 @@
 15 4 16 5 6
 12 13 22 23 14
 '''
-def getMin(arr, value):
+def getMin(arr, value): #value 보다 큰 arr의 최솟값 구하기?
     minV = 1e10
     for r in range(N):
         for c in range(N):
@@ -22,7 +22,7 @@ def snail(arr):
     dr = [0, 1, 0, -1]
     dc = [1, 0, -1, 0]
     d = 0
-    for _ in range(N*N):
+    for _ in range(N*N): # snail이 최솟값 계속 제외하고 최솟값을 구해서 달팽이처럼 정렬해야 하므로! value필요.
         value = getMin(arr, value) # 최솟값을 넣어서 또 getMin 함수 돌림! 리뷰!!
         newArr[row][col] = value # newA 0,0에 최솟값 넣음
 
@@ -33,12 +33,12 @@ def snail(arr):
         row = row + dr[d]
         col = col + dc[d]
 
-
-# print(newArr)
+    # print(newArr) [[1, 2, 3, 4, 5], [16, 17, 18, 19, 6], [15, 24, 25, 20, 7], [14, 23, 22, 21, 8], [13, 12, 11, 10, 9]]
     for row in range(N):
         for col in range(N):
             print(newArr[row][col], end =' ')
         print()
+        # 이거 안하면 2차원 array 안됨. 왜 그러지..
     return
 
 N = 5

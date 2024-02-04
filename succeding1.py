@@ -12,6 +12,7 @@ for tc in range(1, T+1):
                 maxV = cnt
             cnt = 0
     # print(cnt) # 끝이 1로 끝나면 예외니까 한번 더 계산해줘라.
-    if maxV < cnt: # 근데 for문 빠져나와서 cnt가 안될것같은데..
+    if maxV < cnt:
         maxV = cnt
-    print(maxV)
+    print(f'#{tc} {maxV}')
+
