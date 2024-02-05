@@ -1,6 +1,6 @@
 # 목표지점을 먼저 찾아라!!!
 import sys
-sys.stdin = open("C:\cek\pycharm\input.txt","r")
+sys.stdin = open("/input.txt", "r")
 
 T = 10 # 확인하기 위해
 for _ in range(1, T+1):

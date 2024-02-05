@@ -23,6 +23,7 @@ for tc in range(1, T + 1):
                     cnt_word += 1
                 cnt_one = 0
                 # 3 < 5, 4, 5번째도 빼줘야함 -> 그래서 K==cnt_one 만 조건문 붙힘.
+
     for c in range(N):
         cnt_one = 0
         for r in range(N):

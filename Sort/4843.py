@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open("C:\cek\pycharm\sample_input.txt", "r")
+sys.stdin = open("/sample_input.txt", "r")
 
 def getMax(phase): # selection sort 하는 함수 desc.
     maxi = Ai[phase]
