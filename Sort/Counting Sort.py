@@ -12,10 +12,10 @@ for i in range(1, K+1):
     counts[i] += counts[i-1]
 # data의 마지막 원소부터 정렬하기..
 for i in range(N-1, -1, -1): # N-1 -> 0번 인덱스
-    counts[data[i]] -= 1 # 개수를 인덱스로 변환(남은 개수 계산)
+    counts[data[i]] -= 1 # 개수를 인덱스로 변환(남은 개수 계산) # ???????? 여기선 data[i] 가 int라 가능..
     temp[counts[data[i]]] = data[i] # temp에 새로 대입
 print(*temp)
-#-----
+#---------------
 
 for x in data:
     counts[x] += 1
