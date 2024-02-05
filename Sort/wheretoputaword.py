@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open("/Users/eunkyyong/PycharmProjects/pythonProject/TIL/input_w.txt", "r")
+sys.stdin = open("/aaaa/input_w.txt", "r")
 T = int(input())
 for tc in range(1, T + 1):
     # 가로 세로
