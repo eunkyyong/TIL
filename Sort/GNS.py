@@ -1,61 +1,28 @@
 import sys
-sys.stdin = open("/Users/eunkyyong/PycharmProjects/pythonProject/TIL/Sort/GNS_test_input.txt", "r")
+sys.stdin = open("C:\cek\pycharm\TIL\Sort\GNS_test_input.txt", "r")
 
 T = int(input())
 for tc in range(1, T+1):
-    # print(f'{input()}')
+    f'{input()}'
     # input 들어온 것을 뒤에 str만 쪼개자.
-    strr = list(map(str, input().split()))  # list로 나옴.
+    strr = input().split()  # list로 나옴. ['SVN', 'FOR', 'ZRO', 'NIN', ...]
     N = len(strr)
-    arr = [0]*10000
+    cnts = [0]*10  # 0-9 까지의 숫자
+    gns = {'ZRO': 0, 'ONE': 1, 'TWO': 2, 'THR': 3, 'FOR': 4, 'FIV': 5, 'SIX': 6, 'SVN': 7, 'EGT': 8, 'NIN': 9}
+    name = ['ZRO', 'ONE', 'TWO', 'THR', 'FOR', 'FIV', 'SIX', 'SVN', 'EGT', 'NIN']
+    # 리스트 strr 내 요소들을 gns 딕셔너리 내 키와 일치한 값은 딕셔너리 값으로 치환해서 새로운 리스트 작성 가능??
+    # print(strr[0]) SVN
     # print(*strr) # SVN FOR ZRO NIN FOR EGT EGT TWO
-    for i in strr:
-        # ZRO = 0, ..., NIN = 9
-        if i == 'ZRO':
-            arr[0] += 1
-        elif i == 'ONE':
-            arr[1] += 1
-        elif i == 'TWO':
-            arr[2] += 1
-        elif i == 'THR':
-            arr[3] += 1
-        elif i == 'FOR':
-            arr[4] += 1
-        elif i == 'FIV':
-            arr[5] += 1
-        elif i == 'SIX':
-            arr[6] += 1
-        elif i == 'SVN':
-            arr[7] += 1
-        elif i == 'EGT':
-            arr[8] += 1
-        elif i == 'NIN':
-            arr[9] += 1
-        for j in range(1, N+1):
-            arr[j] += arr[j-1]
-        temp = [0]*N
-        for k in range(N-1, -1, -1):
-            if strr[k] == 'ZRO':
-                strr[k] = 0
-            if strr[k] == 'ONE':
-                strr[k] = 1
-            if strr[k] == 'TWO':
-                strr[k] = 2
-            if strr[k] == 'THE':
-                strr[k] = 3
-            if strr[k] == 'FOR':
-                strr[k] = 4
-            if strr[k] == 'FIV':
-                strr[k] = 5
-            if strr[k] == 'SIX':
-                strr[k] = 6
-            if strr[k] == 'SVN':
-                strr[k] = 7
-            if strr[k] == 'EGT':
-                strr[k] = 8
-            if strr[k] == 'NIN':
-                strr[k] = 9
-                arr[strr[k]] -= 1  # 여기선 strr[k]가 str이라 불가능... zro = 0 할당 후 ?
-                temp[arr[strr[k]]] = strr[k]
+    for x in strr:
+        pos = gns.get(x)
+        cnts[pos] += 1
+        # print(type(cnts)) list
+        # print(type(pos)) int
+    # cnt만큼 새로운 리스트에 배열
+    lst = []
+    for i in range(10):
+        for j in range(cnts[i]):
+            lst.append(name[i])
     print(f'#{tc}')
-    print(temp)
+    print(*lst)
+
