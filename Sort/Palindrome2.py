@@ -1,10 +1,11 @@
 import sys
-sys.stdin = open("/Users/eunkyyong/PycharmProjects/pythonProject/TIL/Sort/input_palin.txt", "r")
+sys.stdin = open("C:\cek\pycharm\TIL\Sort\input_palin.txt", "r")
 def is_p(s):
     # chr(printf(%d,'A'))??????
     if s == s[::-1]:
         return True
-    # 'ABA'
+    else:
+        return False
 
 def solve():
     # 0 < M <=100, for문으로 M 범위지정???
@@ -33,7 +34,8 @@ def solve():
                     return len(new_s)
     return -1
 
-T = int(input())
+T = 10
 for tc in range(1, T+1):
+    N = int(input())
     arr = [input().strip() for _ in range(100)]
-    print(f'#{tc} {solve()}')
+    print(f'#{N} {solve()}')
