@@ -5,28 +5,6 @@ def is_p(s):
     if s == s[::-1]:
         return True
     # 'ABA'
-    if s.split(sep= 'A' or 'B' or 'C', 1)[0] == s.split(sep= 'A' or 'B' or 'C', 1)[1]:
-        return True
-    # str이 모두 한 문자로 되어있는 가? 'A' 같은 문자끼리는 모두 가능
-    # str이 어떤 문자로 이뤄져 있는 지?...
-    cnt = 0
-    for c in s:
-        if c == 'A':
-            cnt += 1
-    if cnt == len(s):
-        return True
-    cnt = 0
-    for c in s:
-        if c == 'B':
-            cnt += 1
-    if cnt == len(s):
-        return True
-    cnt = 0
-    for c in s:
-        if c == 'C':
-            cnt += 1
-    if cnt == len(s):
-        return True
 
 def solve():
     # 0 < M <=100, for문으로 M 범위지정???
@@ -44,7 +22,7 @@ def solve():
                 new_s = arr[row][col_s:col_s+M]
                 if is_p(new_s):
                     return len(new_s)
-    for M in range(N, 2, -1):
+
         for col in range(N):
             for row_s in range(N-M+1):
                 strr = ''
