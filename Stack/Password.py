@@ -1,28 +1,23 @@
+import sys
+sys.stdin = open("C:\cek\pycharm\TIL\Stack\input (6).txt", "r")
 for tc in range(1, 11):
-    N, s = map(int, input().split())
-    lst = []
-    # lst 만들
-    for _ in range(10):
-        rem = s%10
-        lst.append(rem)
-        s = s//10
-    # print(lst) [4, 8, 0, 9, 9, 0, 8, 3, 2, 1]
+    N, s = input().split()
+    N = int(N) # s는 받아오면 str, 고칠 필요가 없음!!!
     stck = []
-    stck.append(lst[0])
-    # print(stck)
-    for i in range(1, len(lst)):
+    stck.append(s[0])
+    for i in range(1, N):
         if len(stck) > 0:
-            if lst[i] != stck[-1]:
-                stck.append(lst[i])
+            if s[i] != stck[-1]:
+                stck.append(s[i])
             else:
                 stck.pop()
         else:
-            stck.append(lst[i])
+            stck.append(s[i])
             continue
 
     if len(stck) == 0:
             result = False
-    num = 0
-    for j in range(len(stck)):
-        num += stck[j]*10**j
-    print(f'#{tc} {num}')
+
+    st = ''.join(stck)
+    st = int(st)
+    print(f'#{tc} {st}')
