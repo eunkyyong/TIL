@@ -4,7 +4,7 @@ def dfs(s):
     st = []
     visited = [False] * (V+1)
     st.append(s)
-    visited[s] = True  # 1이라는 소린가?
+    visited[s] = True
 
     while st:
         v = st.pop()

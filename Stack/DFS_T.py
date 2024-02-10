@@ -1,5 +1,3 @@
-
-#
 # def dfs(s):
 #     st = []
 #     visited = [False] * (N+1) # 0을 안쓰는 걸로 간주하고, 0을 빈것으로 남겨놓는 다고 생각
@@ -30,6 +28,7 @@
 #
 #     st.append(s)
 #     visited[s] = True  # 넣을 때 방문표시 하는 법!!
+#
 #     while st:
 #         v = st.pop()
 #             visited[v] = True
@@ -57,7 +56,6 @@
 # dfs(1)
 # visited = [False]* (N+1)
 # # dfs_r(1)
-# # 넣을 때 visited 표시 하는 거 어때?
 #########################################################
 def dfs(s):
     st = []
