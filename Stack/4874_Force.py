@@ -1,26 +1,19 @@
 def step2(lst):
     ST = []
-    try:
-        # .이 중간중간에 나오는 경우
-        for c in lst:
-            if c.isdigit():
-                ST.append(c)
-            elif c == '.':
-
-            else:
-                if len(ST) >= 2:
-                    v2 = ST.pop()
-                    v1 = ST.pop()
-                    ST.append(calc(int(v1), int(v2), c))
-                else:
-                    return 'error'
-        if len(ST) >= 2:
-            return 'error'
-        return ST.pop()
-    except:
+    lst.pop()
+    for c in lst:
+        if c.isdigit():
+            ST.append(c)
+        else:
+            try:
+                v2 = ST.pop()
+                v1 = ST.pop()
+                ST.append(calc(int(v1), int(v2), c))
+            except:
+                return 'error'
+    if or len(ST) != 1:
         return 'error'
-
-
+    return ST.pop()
 
 
 def calc(v1, v2, op):
@@ -37,5 +30,6 @@ def calc(v1, v2, op):
 T = int(input())
 for tc in range(1, T+1):
     s = list(input().split())
+    error = False
     # print(s)
     print(f'#{tc}', step2(s))

@@ -22,4 +22,4 @@ for tc in range(1, T+1):
     for i in range(node//2+1, node+1, 2):  # 간선 개수 범위에 따라
 
 
-    print(f'#{tc}', )
+    print(f'#{tc}' dfs(s))
