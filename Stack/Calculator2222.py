@@ -1,3 +1,6 @@
+import sys
+sys.stdin = open("C:\cek\pycharm\TIL\Stack\input (8).txt", "r")
+
 def step1():
     ST = []
     result = []
@@ -6,7 +9,17 @@ def step1():
     for c in s:
         if c.isdigit():
             result.append(c)
-        elif c ==
+        elif c == ')':
+            while ST[-1] != '(':
+                result.append(ST.pop())
+            ST.pop()
+        else:
+            if ST and isp[ST[-1]] < icp[c] :
+                ST.append(c)
+            else:
+                while ST and isp[ST[-1]] >= icp[c]:
+                    result.append(ST.pop())
+                ST.append(c)
 
     while ST:
         result.append(ST.pop())
