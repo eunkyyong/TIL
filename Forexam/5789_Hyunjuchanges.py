@@ -1,0 +1,11 @@
+T = int(input())
+for tc in range(1, T+1):
+    N, Q = map(int, input().split())
+    box = [0] + [0] * N
+    for i in range(Q):
+        L, R = map(int, input().split())
+        for j in range(L, R+1):
+            box[j] = i
+    box.pop(0)
+    print(f'#{tc}', end = ' ')
+    print(*box)
