@@ -27,7 +27,7 @@ for idx in range(0, len(lst), 2):
     c = lst[idx+1]
 
     TREE[p].append(c)
-# print(TREE)
+# print(TREE) index 가 parent node.
 # [[], [2, 3], [4], [5, 6], [7], [8, 9], [10, 11], [12], [], [], [], [13], [], []]
 
 postOrder(1)

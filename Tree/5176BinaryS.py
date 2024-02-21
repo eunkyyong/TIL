@@ -1,3 +1,9 @@
+"""
+3
+6
+8
+15
+"""
 # inOrder
 def inOrder(root):
     global vle
