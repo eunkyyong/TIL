@@ -23,11 +23,11 @@ for tc in range(1, T+1):
         narr[o][0] = arr[o].count('W')
         narr[o][1] = arr[o].count('B')
         narr[o][2] = arr[o].count('R')
-
+    print(narr)
     Sum = 0
-    Min = 200
-    for l1 in range(0, N-2):
-        for l2 in range(1, N-1):
+    Min = 1000
+    for l1 in range(1, N-2):
+        for l2 in range(2, N-1):
             if l1 < l2:
                 for i in range(0, l1):
                     Sum += narr[i][1] + narr[i][2]
@@ -35,7 +35,8 @@ for tc in range(1, T+1):
                     Sum += narr[j][0] + narr[j][2]
                 for k in range(l2, N):
                     Sum += narr[k][0] + narr[k][1]
-
+            print(Sum)
             if Min > Sum:
                 Min = Sum
-    print(f'#{tc} {Sum}')
+                Sum = 0
+    print(f'#{tc} {Min}')
