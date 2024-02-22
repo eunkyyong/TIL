@@ -17,16 +17,14 @@ T = int(input())
 for tc in range(1, T+1):
     N, M = map(int, input().split())
     arr = [list(input()) for _ in range(N)]
-    print(arr)
 
     narr = [[0]*3 for _ in range(N)]
     for o in range(0, N):
         narr[o][0] = arr[o].count('W')
         narr[o][1] = arr[o].count('B')
         narr[o][2] = arr[o].count('R')
-    print(narr)
 
-    Min = 1000
+    Min = N*M   # 이 부분 자꾸 틀리니까 조심!
     for l1 in range(1, N-1):
         for l2 in range(2, N):
             if l1<l2:
