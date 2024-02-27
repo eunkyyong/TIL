@@ -33,5 +33,5 @@ for tc in range(1, T+1):
     used[0] = True
     path[0] = 0
     Min = 100*N
-    perm(,)
-    print(f'#{tc} ')
+    perm(1, 0)
+    print(f'#{tc} {Min}')
