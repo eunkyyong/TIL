@@ -16,19 +16,25 @@
 83 61 94 0 17
 40 71 24 38 0
 '''
-def perm(k):  # k = depth
+# 중간합 구해서 빠져나가면 더 좋음
+def perm(k, midSum):  # k = depth
+    global Min
     if k==N:  # append방식말고 k번째 값에 집어넣기
-        print(path)
+        midSum += arr[path[N-1]][0]
+        # print(midSum)
+        # print(path)
+        if Min > midSum:
+            Min = midSum
         return
 
     for i in range(N):
         if not used[i]:
             path[k] = i
             used[i] = True  # 사용하는 것은 i.
-            perm(k+1)
+            s = path[k-1]
+            e = path[k]
+            perm(k+1, midSum + arr[path[k-1]][i])
             used[i] = False
-
-
 
 T = int(input())
 for tc in range(1, T+1):
@@ -40,5 +46,6 @@ for tc in range(1, T+1):
 
     used[0] = True
     path[0] = 0  # 옆 1, 2는 버린 것임
-
-    perm(1)
+    Min = 1000
+    perm(1, 0)
+    print(f'#{tc} {Min}')

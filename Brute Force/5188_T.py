@@ -1,7 +1,7 @@
 def recu(row, col, midSum):
     global Min
 
-    if row==N-1 and col == N-1:
+    if row == N-1 and col == N-1:
         # print(path)
         # print(midSum)
         if Min > midSum:
