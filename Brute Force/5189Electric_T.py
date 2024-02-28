@@ -29,7 +29,7 @@ def perm(k, midSum):  # k = depth
 
     for i in range(N):
         if not used[i]:
-            path[k] = i
+            path[k] = i  # 행,열 인덱스 만 들어있는 리스트가 path인가..
             used[i] = True  # 사용하는 것은 i.
             s = path[k-1]
             e = path[k]

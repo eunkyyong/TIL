@@ -6,7 +6,7 @@ def perm(k, midSum):
         print(midSum)
         if Min > midSum:
             Min = midSum
-        return
+        return   # 이 끝에 무엇을 추가해야 하는 건 아닌 지 알아보자.
 
     for i in range(N):
         if not used[i]:
@@ -14,7 +14,7 @@ def perm(k, midSum):
             used[i] = True
             s = path[k-1]
             e = path[k]
-            perm(k+1, midSum + abs(x[path[k]]-x[]) + abs(y[path[k]]-y[]))
+            perm(k+1, midSum + abs(x[s]-x[e]) + abs(y[s]-y[e]))
 
 
 T = int(input())
@@ -28,8 +28,8 @@ for tc in range(1, T+1):
         y.append(lst[i+1])  # [0, 100, 40, 10, 5, 70]
     path = [-1] * N
     used = [False] * N
-    print(x)
-    print(y)
+    # print(x)
+    # print(y)
     used[0] = True
     path[0] = 0
     Min = 100*N
