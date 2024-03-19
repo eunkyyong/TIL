@@ -21,7 +21,6 @@
 
 def perm(k):
     global minV
-    global backT
     if k == N:
         # print(result)
         sumV = 0
