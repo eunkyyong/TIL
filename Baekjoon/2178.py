@@ -19,7 +19,7 @@ def bfs(y, x):
         y, x = q.popleft()
         if (y, x) == (N-1, M-1):
             return v[N-1][M-1]
-~
+
         for (dy, dx) in [(0, 1), (0, -1), (1, 0), (-1, 0)]:
             ny, nx = y + dy, x + dx
             if 0<=ny<N and 0<=nx<M and arr[ny][nx] == 1:
