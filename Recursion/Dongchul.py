@@ -1,7 +1,7 @@
 def perm(k):
     global maxV
     if k == N:
-        print(result)
+        # print(result)
         prob = 1
         for i in range(N):
             pos = result[i]
@@ -10,6 +10,14 @@ def perm(k):
         if maxV < prob:
             maxV = prob
         return
+    else:
+        multiply = 1
+        for i in range(1, k+1):
+            pos1 = result[i]
+            multiply *= numbers[i][pos1]/100
+        if multiply <= maxV/1000000:
+            return
+
 
     for i in range(N):
         if visited[i] == False:
@@ -27,5 +35,4 @@ for tc in range(T):
     result = [-1] * N
     maxV = 0
     perm(0)
-    print(f'#{tc+1}', end = ' ')
-    print("{:.6f}".format(maxV))
+    print(f'#{tc+1} {maxV:.6f}')
