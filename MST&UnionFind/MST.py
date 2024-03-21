@@ -63,7 +63,7 @@ for _ in range(E):
     graph[s][e] = w
     # 무방향(쌍방향) 그래프
     graph[e][s] = w
-    prim(s)
+prim(s)
 
 
 
