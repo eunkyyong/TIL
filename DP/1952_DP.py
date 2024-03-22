@@ -17,7 +17,7 @@ for tc in range(1, T+1):
     # 1~12월까지 반복
     for i in range(1, 13):
         # 현재 달까지의 최소 비용 계산
-        # 이전 달 + 1일권 구입 / 이전 닫 + 1달권 구입 / 3달 전 + 3달권 구입 그 중에서 최소
+        # 이전 달 + 1일권 구입 / 이전 달 + 1달권 구입 / 3달 전 + 3달권 구입 그 중에서 최소
         plans[i] = min(plans[i-1] + (days[i]*cost[0]), plans[i-1] + cost[1])
         if i >= 3:
             plans[i] = min(plans[i], plans[i-3]+cost[2])

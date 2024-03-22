@@ -24,7 +24,7 @@ def dijk(now):
             if G[now][i]:
                 # 지금까지 들어있는 값+엣지값과의 최솟값/ 한 점까지 온 거리 모두와 이 경로와 비교해서 최솟값 구하기
                 D[i] = min(D[i], D[now]+G[now][i])
-    print(U, D)
+                print(U, D)
 
 V, E = map(int, input().split())
 G = [[0]* V for _ in range(V)]
@@ -32,7 +32,7 @@ G = [[0]* V for _ in range(V)]
 for i in range(E):
     v1, v2, w = map(int, input().split())
     G[v1][v2] = w
-
+print(G)
 dijk(0)
 
 #

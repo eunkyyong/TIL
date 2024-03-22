@@ -14,10 +14,10 @@ def dfs(cnt, sum_height):
     # -> 현재까지 쌓은 탑의 높이
     # 제일 높이가 낮은 탑이 정답
     # - 최소 탑의 높이는 재귀호출함수들이 "동시에" 사용함. -> 전역변수로 사용.
+    # 다 쌓았을 때 B이상이 되면 안됨!
     if sum_height >= B:
         ans = min(ans, sum_height)
         return
-    # 다 쌓았을 때 B이상이 되면 안됨!
     if cnt == N:
         return
 

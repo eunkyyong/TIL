@@ -10,7 +10,7 @@ def perm(k, s):
     for i in range(s, N-K+1+k):
         result[k] = i
         perm(k+1, i+1)
-        print(k+1)
+        # print(k+1)
         #i는 자료가 들어있는 인덱스임
         # result 는 인덱스가 들어있는 리스트.
     return
