@@ -21,3 +21,13 @@ for tc in range(1, T+1):
     ans = int(1e6)
     dfs(0, 0)
     print(f'#{tc} {abs(ans-B)}')
+
+def dfs(cnt, sum_height):
+    global ans
+    if sum_height >= B:
+        ans = min(ans, sum_height)
+        return
+    if cnt == N:
+        return
+
+    dfs
